@@ -1,0 +1,82 @@
+/* Global styles */
+body {
+  background-color: #dedede;
+}
+
+h1 {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 32px;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+}
+
+p {
+  font-size: 25px;
+  font-family: Arial, sans-serif;
+}
+
+img {
+  width: 100%;
+}
+
+p {
+  text-align: center;
+}
+
+/* Mobile view (no media query needed) */
+div {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin: 5px;
+  padding: 2px;
+}
+
+/* Tablet view (772px) */
+@media screen and (min-width: 772px) {
+  div {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  div img {
+    border-radius: 50%;
+  }
+
+  div:last-child {
+    grid-column: span 2;
+  }
+}
+
+/* Large screen view (992px) */
+@media screen and (min-width: 992px) {
+  div:nth-child(3n) {
+    grid-column: span 2;
+    border-radius: 0;
+  }
+}
+
+/* Prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Dark color scheme */
+@media (prefers-color-scheme: dark) {
+  div {
+    background-color: #333;
+    color: #ffeb3b;
+    border-color: #000;
+  }
+
+  div img {
+    filter: brightness(75%); /* Adjust brightness for images */
+  }
+}
